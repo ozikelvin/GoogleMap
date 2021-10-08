@@ -258,9 +258,31 @@ function SimpleMap () {
     
   }
 
+  
+  const style = {
+    headerContainer:{
+        width:'100%',
+        background:'#000000',
+        height:'6vw',
+        display:'flex',
+        alignItems:'center'
+    },
+    logoText:{
+        color:'#ffff',
+        marginLeft:'1rem'
+    },
+    
+}
+
     return (
-      // Important! Always set the container height explicitly
-      <div style={{ height: '100vh', width: '100%' }}>
+        <div>
+            <div style={style.headerContainer} >
+                <div >
+                    <h2 style={style.logoText} >Jerrex Maps</h2>
+                </div>
+            </div>
+        
+      <div style={{ height: '100vh', width: '100%', paddingTop:'20px' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyBKg2Dm8k0zo2V1Xp7sx1Sirha4u9qeypI', region:'NI' }}
           defaultCenter={pros?.center}
@@ -289,6 +311,7 @@ function SimpleMap () {
                   
 
         </GoogleMapReact>
+      </div>
       </div>
     );
   
