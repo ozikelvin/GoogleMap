@@ -4,8 +4,8 @@ import GoogleMapReact from 'google-map-react';
 import RoomIcon from '@mui/icons-material/Room';
 
 
-const AnyReactComponent = ({showlo, tooltip, showOpt}) => <div > 
-    <RoomIcon onClick={showlo} style={{fontSize:'45px', color:'#FF0909'}} /> 
+const AnyReactComponent = ({showlo, tooltip, showOpt}) => <div >
+    <RoomIcon onClick={showlo} style={{fontSize:'45px', color:'#FF0909'}} />
 
         {
            showOpt ? (
@@ -242,7 +242,98 @@ function SimpleMap () {
       "coordinates": [ 3.391817506351976, 6.562910860917736]
     }
   },
+  {
+    "type": "Feature",
+    "properties": {
+      "PARK_ID": 1907,
+      "FACILITYID": 28097,
+      "NAME": "Gbenga Odunowo",
+      "NAME_FR": "Planchodrome de Greenboro",
+      "ADDRESS": "1, Flourishing Cresent, Amuwo Odofin housing Estate Mile",
+      "ADDRESS_FR": "Flourishing House",
+      "FACILITY_T": "flat",
+      "FACILITY_1": "plat",
+      "ACCESSCTRL": "no/non",
+      "ACCESSIBLE": "no/non",
+      "OPEN": null,
+      "NOTES": "Outdoor",
+      "MODIFIED_D": "2018/01/18",
+      "CREATED_DA": null,
+      "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+      "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+      "DESCRIPTIO": "Flat asphalt surface, 5 components",
+      "DESCRIPT_1": "Surface d'asphalte plane, 5 modules",
+      "PICTURE_LI": null,
+      "PICTURE_DE": false,
+      "PICTURE__1": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [ 3.316466986910815, 6.471009705696905]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "PARK_ID": 13907,
+      "FACILITYID": 28007,
+      "NAME": "Gbenga Odunowo",
+      "NAME_FR": "Planchodrome de Greenboro",
+      "ADDRESS": "35, Palm Avenue, Mushin",
+      "ADDRESS_FR": "Flourishing House",
+      "FACILITY_T": "flat",
+      "FACILITY_1": "plat",
+      "ACCESSCTRL": "no/non",
+      "ACCESSIBLE": "no/non",
+      "OPEN": null,
+      "NOTES": "Outdoor",
+      "MODIFIED_D": "2018/01/18",
+      "CREATED_DA": null,
+      "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+      "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+      "DESCRIPTIO": "Flat asphalt surface, 5 components",
+      "DESCRIPT_1": "Surface d'asphalte plane, 5 modules",
+      "PICTURE_LI": null,
+      "PICTURE_DE": false,
+      "PICTURE__1": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [ 3.352002511379963, 6.605144296566172]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "PARK_ID": 16907,
+      "FACILITYID": 28707,
+      "NAME": "Gbenga Odunowo",
+      "NAME_FR": "Planchodrome de Greenboro",
+      "ADDRESS": "D cubicle Event Centre, Old Garage Idimu",
+      "ADDRESS_FR": "Flourishing House",
+      "FACILITY_T": "flat",
+      "FACILITY_1": "plat",
+      "ACCESSCTRL": "no/non",
+      "ACCESSIBLE": "no/non",
+      "OPEN": null,
+      "NOTES": "Outdoor",
+      "MODIFIED_D": "2018/01/18",
+      "CREATED_DA": null,
+      "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+      "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+      "DESCRIPTIO": "Flat asphalt surface, 5 components",
+      "DESCRIPT_1": "Surface d'asphalte plane, 5 modules",
+      "PICTURE_LI": null,
+      "PICTURE_DE": false,
+      "PICTURE__1": null
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [ 3.251117705823967,  6.559951105366722 ]
+    }
+  },
 ])
+
 
 
 
@@ -255,10 +346,10 @@ function SimpleMap () {
         }
         return item;
     }))])
-    
+
   }
 
-  
+
   const style = {
     headerContainer:{
         width:'100%',
@@ -271,7 +362,7 @@ function SimpleMap () {
         color:'#ffff',
         marginLeft:'1rem'
     },
-    
+
 }
 
     return (
@@ -281,22 +372,22 @@ function SimpleMap () {
                     <h2 style={style.logoText} >Jerrex Maps</h2>
                 </div>
             </div>
-        
+
       <div style={{ height: '100vh', width: '100%', paddingTop:'20px' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyBKg2Dm8k0zo2V1Xp7sx1Sirha4u9qeypI', region:'NI' }}
           defaultCenter={pros?.center}
           defaultZoom={pros?.zoom}
           yesIWantToUseGoogleMapApiInternals={true}
-          
-          
+
+
         >
 
 
                    { locations.map(park => (
         <AnyReactComponent
           key={park?.properties?.PARK_ID}
-            
+
             lat={ park?.geometry?.coordinates[1]}
             lng ={park?.geometry?.coordinates[0]}
 
@@ -308,13 +399,13 @@ function SimpleMap () {
 
       ))}
 
-                  
+
 
         </GoogleMapReact>
       </div>
       </div>
     );
-  
+
 }
 
 export default SimpleMap;
